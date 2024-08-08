@@ -1,0 +1,9 @@
+pipeline{
+    agent any
+    steges{
+        stage('git initialization'){
+            steps{git branch: 'master', url: 'https://github.com/Abhinav501-eng/maven-demo_88.git'
+            }
+        }
+    }
+}
