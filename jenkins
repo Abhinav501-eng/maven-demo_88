@@ -24,6 +24,12 @@ pipeline{
 
             }
         }
+
+            stage('deploy to tomcat'){
+        steps{sshagent(credentials: ['deploy-to-tomcat'], ignoreMissing: true) {
+                sh 'scp -o StrictHostKeyChecking=no withMavenf6f4dee6/maven-spy-20240813-145028-4816279182110185457368.log ec2-user@172.31.3.160:/usr/share/tomcat/webapps'
+         }}}
+
         
 
     }
